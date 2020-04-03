@@ -4,8 +4,8 @@ import createNumberMask from 'text-mask-addons/dist/createNumberMask';
 
 import Mastercard from './assets/img/mastercard.svg';
 import Money from './assets/img/money.svg';
-import './assets/App.css';
-import './assets/responsive.css'
+import './assets/css/App.css';
+import './assets/css/responsive.css'
 import {create} from 'domain';
 
 function App() {
