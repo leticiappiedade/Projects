@@ -29,6 +29,7 @@ function App() {
         return unmaskedValue;
     }
 
+    //Pegando o dado da API
     const fetchApi = async(formato = `json`, currency = `USD-BRL`) => {
         await fetch(`https://economia.awesomeapi.com.br/${formato}/all/${currency}`).then((response) => {
             return response.json();
@@ -37,6 +38,7 @@ function App() {
         });
     }
 
+    // Aqui faz o calculo da conversao com os dados pegos da API e os dados de entrada
     const convert = () => {
         fetchApi();
 
@@ -67,6 +69,7 @@ function App() {
 
     }
 
+    // Aqui pegamos o valor do radio button de acordo com a opcao
     const getRadioValue = (event) => {
         if (event.target.checked === true) {
             event.target.value === "credit"

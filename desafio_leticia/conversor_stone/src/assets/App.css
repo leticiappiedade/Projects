@@ -68,8 +68,8 @@
 }
 
 .input-extra{
-  background-color:#FFFF05;
-  border: solid 1px #FFFF05;
+  background-color:#D4DBF5;
+  border: solid 1px #D4DBF5;
   width:20%;
   padding:5px;
   color:black;
@@ -77,8 +77,6 @@
   border-bottom-left-radius:5px;
  
 }
-
-
 
 .radios{
   width:100%;
