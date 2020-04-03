@@ -10,36 +10,26 @@ function App() {
 
 
 
-  return (
-    <main className="App">
-      <div className="app-space">
-        <div className="form-space">
-          <form>
-            <div className="input-form">
-              <label>Dolares</label>
-              <input type="text"></input>
+    return (
+      <main className="App">
+        <div className="app-section">
+          <div className="form">
+            <div className="form-items">
+              <label>Dólares</label>
+              <input class="input-form" type="text"></input>
             </div>
 
-            <div className="input-form">
+            <div className="form-items">
               <label>Imposto de Estado</label>
-              <input type="text"></input>
+              <input class="input-form" type="text"></input>
             </div>
 
-            <div className="radio-form">
-                <div className="radio-label">
-                  Opção de pagamento
-                </div>
-                <div className="radio-option">
-                    <input type="radio" id="credit" name="buyingMethod" value="credit"></input>
-                </div>
-                <div className="radio-option">
-                    <input type="radio" id="money" name="buyingMethod" value="money "></input>
-                </div>
-            </div>
-            </form>
+          </div>
         </div>
-      </div>
-    </main>
+
+
+    
+      </main>
 
   
   );
