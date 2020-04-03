@@ -1,5 +1,7 @@
 import React, {useState, useRef, useEffect} from 'react';
 
+import Mastercard from './assets/img/mastercard.svg';
+import Money from './assets/img/money.svg';
 import './assets/App.css';
 
 function App() {
@@ -23,6 +25,22 @@ function App() {
               <label>Imposto de Estado</label>
               <input class="input-form" type="text"></input>
             </div>
+
+            <div className="form-items">
+              <label>Modo de Pagamento</label>
+              <div className="radios">
+                <div className="radio-option">
+                  <input type="radio" name="buying" value="money"></input>
+                  <img src={Money} alt="Money Option"/>
+                </div>
+                <div className="radio-option">
+                  <input type="radio" name="buying" value="credit"></input>
+                  <img src={Mastercard} alt="Card Option"/>
+                </div>
+              </div>
+            </div>
+
+            <button type="submit" className="btn-convert">Enviar</button>
 
           </div>
         </div>
