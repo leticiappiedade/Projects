@@ -47,15 +47,38 @@
   font-family:'Roboto', sans-serif;
 
 
+
 }
 
-.form-items>input{
+.input-form{
   margin-top:5px;
   width:80%;
   padding:5px;
   border-radius:5px;
+  display:flex;
+  flex-flow:row;
 
 }
+
+.false-input{
+  padding:5px;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius:5px;
+  width:100%;
+}
+
+.input-extra{
+  background-color:#FFFF05;
+  border: solid 1px #FFFF05;
+  width:20%;
+  padding:5px;
+  color:black;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius:5px;
+ 
+}
+
+
 
 .radios{
   width:100%;

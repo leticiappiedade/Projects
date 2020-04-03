@@ -76,42 +76,63 @@ function App() {
 
         convert();
     }
-    
-    useEffect(()=>{
-      fetchApi();
+
+    useEffect(() => {
+        fetchApi();
     })
-
-
 
     return (
         <main className="App">
             <div className="app-section">
-                <form className="form">
+                <form
+                    className="form"
+                    ref={calcForm}
+                    method="POST"
+                    action=""
+                    onSubmit={convert}>
                     <div className="form-items">
-                        <label>Dólares</label>
-                        <input class="input-form" type="text"></input>
+                        <label htmlFor="dollars">Dólares</label>
+                        <div className="input-form">
+                            <div className="input-extra">$</div>
+                            <MaskedInput
+                                ref={moneyValue}
+                                mask={moneyMask}
+                                id="dollars"
+                                name="dollars"
+                                type="text"
+                                onChange={unmask}
+                                className="false-input"/>
+                        </div>
                     </div>
 
                     <div className="form-items">
-                        <label>Imposto de Estado</label>
-                        <input class="input-form" type="text"></input>
+                        <label htmlFor="stateTax">Imposto de Estado</label>
+                        <div className="input-form">
+                          <div className="input-extra" id="tax-extra">%</div>
+                          <MaskedInput mask={taxMask} id="state_tax" name="state_tax" type="text" className="false-input"/>
+                        </div>
                     </div>
 
                     <div className="form-items">
                         <label>Modo de Pagamento</label>
                         <div className="radios">
                             <div className="radio-option">
-                                <input type="radio" name="buying" value="money"></input>
+                                <input
+                                    type="radio"
+                                    name="buying"
+                                    value="money"
+                                    defaultChecked
+                                    onChange={getRadioValue}></input>
                                 <img src={Money} alt="Money Option"/>
                             </div>
                             <div className="radio-option">
-                                <input type="radio" name="buying" value="credit"></input>
+                                <input type="radio" name="buying" value="credit" onChange={getRadioValue}></input>
                                 <img src={Mastercard} alt="Card Option"/>
                             </div>
                         </div>
                     </div>
 
-                    <button type="submit" className="btn-convert">Converter</button>
+                    <button type="button" className="btn-convert" onClick={convert}>Converter</button>
 
                 </form>
 
@@ -124,7 +145,9 @@ function App() {
                             <span>Total Real</span>
                         </div>
                         <div className="result-control-info">
-                            <span>--</span>
+                            <span>{calc.real !== 0
+                                    ? calc.real
+                                    : '...'}</span>
                         </div>
                     </div>
 
@@ -133,7 +156,9 @@ function App() {
                             <span>Total Real (com imposto)</span>
                         </div>
                         <div className="result-control-info">
-                            <span>--</span>
+                            <span>{calc.realFee !== 0
+                                    ? calc.realFee
+                                    : '...'}</span>
                         </div>
                     </div>
 
@@ -142,7 +167,9 @@ function App() {
                             <span>Total Dólar</span>
                         </div>
                         <div className="result-control-info">
-                            <span>--</span>
+                            <span>{calc.dollar !== 0
+                                    ? calc.dollar
+                                    : '...'}</span>
                         </div>
                     </div>
 
@@ -151,7 +178,9 @@ function App() {
                             <span>Total Dólar (com imposto)</span>
                         </div>
                         <div className="result-control-info">
-                            <span>--</span>
+                            <span>{calc.dollarFee !== 0
+                                    ? calc.dollarFee
+                                    : '...'}</span>
                         </div>
                     </div>
 
@@ -160,7 +189,9 @@ function App() {
                             <span>IOF</span>
                         </div>
                         <div className="result-control-info">
-                            <span>--</span>
+                            <span>{iof !== 0
+                                    ? iof
+                                    : '...'}</span>
                         </div>
                     </div>
 
@@ -169,7 +200,9 @@ function App() {
                             <span>Cotação do Dia</span>
                         </div>
                         <div className="result-control-info">
-                            <span>--</span>
+                            <span>{multiplier !== 0
+                                    ? multiplier
+                                    : '...'}</span>
                         </div>
                     </div>
 
