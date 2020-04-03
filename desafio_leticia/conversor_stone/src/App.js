@@ -1,25 +1,47 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, {useState, useRef, useEffect} from 'react';
+
+import './assets/App.css';
 
 function App() {
+
+
+
+
+
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <main className="App">
+      <div className="app-space">
+        <div className="form-space">
+          <form>
+            <div className="input-form">
+              <label>Dolares</label>
+              <input type="text"></input>
+            </div>
+
+            <div className="input-form">
+              <label>Imposto de Estado</label>
+              <input type="text"></input>
+            </div>
+
+            <div className="radio-form">
+                <div className="radio-label">
+                  Opção de pagamento
+                </div>
+                <div className="radio-option">
+                    <input type="radio" id="credit" name="buyingMethod" value="credit"></input>
+                </div>
+                <div className="radio-option">
+                    <input type="radio" id="money" name="buyingMethod" value="money "></input>
+                </div>
+            </div>
+            </form>
+        </div>
+      </div>
+    </main>
+
+  
   );
 }
 
