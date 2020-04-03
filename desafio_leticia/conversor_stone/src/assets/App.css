@@ -1,10 +1,10 @@
 .App {
   text-align: center;
   min-width:100%;
-  min-height:100%;
+  min-height:100vh;
 
   width:100vw;
-  height:100vh;
+  height:100%;
   background-color:#0A1747;
   display:flex;
   justify-content: center;
@@ -12,24 +12,79 @@
 }
 
 .app-section{
-  width:60vw;
-  padding-top:2vh;
-  padding-bottom:2vh;
-  padding-left:1vw;
-  padding-right:1vw;
-
-  
+  padding-top:2em;
+  padding-bottom:2em;
+  padding-left:4em;
+  padding-right:4em;
+  width:70%;
+   
   display:flex;
-  flex-flow:row;
+  flex-flow:row
+}
+
+@media (max-width:1042px){
+
+  .app-section{
+      width:90%;
+  }
+
+
+}
+
+@media (max-width:860px){
+
+  .App{
+    padding-top:80px;
+    padding-bottom:80px;
+  }
+  .app-section{
+    flex-flow:column;
+    justify-content:center;
+    align-items: center;
+    width:100%;
+  }
+
+  .form{
+    width:60%!important;
+    padding-bottom:20px;
+  }
+
+  .mid{
+    background-color:yellow!important;
+  }
+  .result-section{
+    width:60%!important;
+    margin-top:30px;
+  }
+}
+
+@media (max-width:772px){
+  
+  .form{
+    width:95%!important;
+    padding-bottom:40px;
+  }
+
+  .form-items{
+    margin-left:20px!important;
+  }
+
+  .result-section{
+    width:95%!important;
+  }
+
+  .result-control{
+    margin-left:20px!important;
+    margin-right:20px!important;
+  }
+  
 }
 
 .form{
   width:40%;
-  height:50vh;
   padding-top:40px;
   border-radius:5px;
   border-right:3px solid #F2E313;
-
   background-color:#F5f5f5;
 
 }
@@ -109,15 +164,15 @@
 }
 
 .mid-sect{
-  width:5%;
-  height:50vh;
+  width:7%;
+  
 }
 
 /* Css da parte dos resultados de conversão */
 
 .result-section{
-  width:55%;
-  height:50vh;
+  
+  width:53%;
   padding-top:40px;
   padding-bottom:40px;
   background-color:#F5f5f5;
@@ -145,7 +200,7 @@
 }
 
 .result-control-label{
-  width:70%;
+  width:280px;
   padding:10px;
 
   display:flex;
