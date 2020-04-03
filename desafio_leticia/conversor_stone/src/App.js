@@ -40,9 +40,74 @@ function App() {
               </div>
             </div>
 
-            <button type="submit" className="btn-convert">Enviar</button>
+            <button type="submit" className="btn-convert">Converter</button>
 
           </div>
+
+          <div className="mid-sect"></div>
+
+          <div className="result-section">
+
+            <div className="result-control">
+              <div class="result-control-label">
+                <span>Total Real</span>
+              </div>
+              <div className="result-control-info">
+                <span>--</span>
+              </div>
+            </div>
+
+            <div className="result-control">
+              <div class="result-control-label">
+                <span>Total Real (com imposto)</span>
+              </div>
+              <div className="result-control-info">
+                <span>--</span>
+              </div>
+            </div>
+
+            <div className="result-control">
+              <div class="result-control-label">
+                <span>Total Dólar</span>
+              </div>
+              <div className="result-control-info">
+                <span>--</span>
+              </div>
+            </div>
+
+            <div className="result-control">
+              <div class="result-control-label">
+                <span>Total Dólar (com imposto)</span>
+              </div>
+              <div className="result-control-info">
+                <span>--</span>
+              </div>
+            </div>
+
+            <div className="result-control">
+              <div class="result-control-label">
+                <span>IOF</span>
+              </div>
+              <div className="result-control-info">
+                <span>--</span>
+              </div>
+            </div>
+
+            <div className="result-control">
+              <div class="result-control-label">
+                <span>Cotação do Dia</span>
+              </div>
+              <div className="result-control-info">
+                <span>--</span>
+              </div>
+            </div>
+
+          </div>
+
+
+
+
+
         </div>
 
 

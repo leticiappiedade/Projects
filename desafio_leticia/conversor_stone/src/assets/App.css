@@ -5,7 +5,7 @@
 
   width:100vw;
   height:100vh;
-  background-color:red;
+  background-color:#0A1747;
   display:flex;
   justify-content: center;
   align-items: center;
@@ -16,14 +16,22 @@
   padding-top:2vh;
   padding-bottom:2vh;
   padding-left:1vw;
-  background-color:white;
+  padding-right:1vw;
+
+  
+  display:flex;
+  flex-flow:row;
 }
 
 .form{
-  width:25vw;
+  width:40%;
   height:50vh;
   padding-top:40px;
   border-radius:5px;
+  border-right:3px solid #F2E313;
+
+  background-color:#F5f5f5;
+
 }
 
 .form-items{
@@ -37,6 +45,7 @@
 
   font-size:1.1em;
   font-family:'Roboto', sans-serif;
+
 
 }
 
@@ -69,6 +78,65 @@
 }
 
 .btn-convert{
-  padding:10px 70px;
+  padding:10px 50px;
   pointer-events: stroke;
+  border-radius:5px;
+  border:0;
+  background-color:#FFFF05;
+
+  font-size:.85em;
+}
+
+.mid-sect{
+  width:5%;
+  height:50vh;
+}
+
+/* Css da parte dos resultados de conversão */
+
+.result-section{
+  width:55%;
+  height:50vh;
+  padding-top:40px;
+  padding-bottom:40px;
+  background-color:#F5f5f5;
+ 
+  justify-self:flex-end;
+  border-left:3px solid #F2E313;
+  border-radius:5px;
+
+  font-family:'Roboto', sans-serif;
+  
+  
+}
+
+.result-control{
+  margin-left:40px;
+  margin-right:40px;
+
+  display:flex;
+  flex-flow:row;
+  font-size:1.1em;
+  
+  margin-bottom:10px;
+  border-bottom:solid 2px #F2E313;
+
+}
+
+.result-control-label{
+  width:70%;
+  padding:10px;
+
+  display:flex;
+  align-items: flex-start;
+}
+
+.result-control-info{
+  width:30%;
+  padding:10px;
+}
+
+.result-control:last-child{
+  margin-top:25px;
+  border:0;
 }
