@@ -1,84 +1,81 @@
-@media only screen and (max-width:1042px){
+@media only screen and (max-width:1042px) {
 
-    .app-section{
-        width:90%;
+    .app-section {
+        width: 90%;
     }
-  
-  
-  }
-  
-  @media only screen and (max-width:860px){
-  
-    .App{
-      padding-top:80px;
-      padding-bottom:80px;
-    }
-    .app-section{
-      flex-flow:column;
-      justify-content:center;
-      align-items: center;
-      width:100%;
-    }
-  
-    .form{
-      width:60%!important;
-      padding-bottom:20px;
-    }
-  
-    .mid{
-      background-color:yellow!important;
-    }
-    .result-section{
-      width:60%!important;
-      margin-top:30px;
-    }
-  }
-  
-  @media only screen and (max-width:600px){
-    
-    .form{
-      width:95%!important;
-      padding-bottom:40px;
-    }
-  
-    .form-items{
-      margin-left:20px!important;
-    }
-  
-    .result-section{
-      width:95%!important;
-    }
-  
-    .result-control{
-      margin-left:20px!important;
-      margin-right:20px!important;
-    }
-    
-  }
 
- @media only screen and (max-width:700px and min-width:601px){
+}
+@media only screen and (max-width:860px) {
 
-  .form{
-    width:75%!important;
-    padding-bottom:40px;
-  }
+    .App {
+        padding-top: 80px;
+        padding-bottom: 80px;
+    }
+    .app-section {
+        flex-flow: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        margin-left:5vw;
+        margin-right:5vw;
+    }
 
-  .form-items{
-    margin-left:20px!important;
-  }
+    .form {
+        width: 60%!important;
+        padding-bottom: 20px;
+    }
 
-  .result-section{
-    width:75%!important;
-  }
+    .mid {
+        background-color: yellow!important;
+    }
+    .result-section {
+        width: 60%!important;
+        margin-top: 30px;
+    }
+}
+@media only screen and (max-width:600px) {
 
-  .result-control{
-    margin-left:20px!important;
-    margin-right:20px!important;
-  }
- }
+    .form {
+        width: 95%!important;
+        padding-bottom: 40px;
+    }
 
- @media only screen and (min-width:1685px){
-   .app-section{
-     width:55%;
-   }
- }
+    .form-items {
+        margin-left: 20px !important;
+    }
+
+    .result-section {
+        width: 95%!important;
+    }
+
+    .result-control {
+        margin-left: 20px !important;
+        margin-right: 20px !important;
+    }
+
+}
+@media only screen and (max-width:700px) and (min-width:601px) {
+
+    .form {
+        width: 75%!important;
+        padding-bottom: 40px;
+    }
+
+    .form-items {
+        margin-left: 20px !important;
+    }
+
+    .result-section {
+        width: 75%!important;
+    }
+
+    .result-control {
+        margin-left: 20px !important;
+        margin-right: 20px !important;
+    }
+}
+@media only screen and (min-width:1685px) {
+    .app-section {
+        width: 55%;
+    }
+}
