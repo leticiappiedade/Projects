@@ -76,3 +76,9 @@
     margin-right:20px!important;
   }
  }
+
+ @media only screen and (min-width:1685px){
+   .app-section{
+     width:55%;
+   }
+ }
