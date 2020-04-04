@@ -10,8 +10,7 @@ Para executar o aplicativo, baixe os arquivos e no seu cmder digite
 
 Após a instalção digite --> npm start <-- para a execução do mesmo e aproveite a experiencia.
 
-
-
+Observação: Caso ao executar tenha um erro com o text-mask-addons, vá ao seu cmder e de --> npm i text-mask-addons <--
 
 
 Criado por Letícia Piedade.
