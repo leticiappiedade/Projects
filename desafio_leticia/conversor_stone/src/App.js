@@ -1,3 +1,4 @@
+// Letícia Piedade
 import React, {useState, useRef, useEffect} from 'react';
 import MaskedInput from 'react-text-mask';
 import createNumberMask from 'text-mask-addons/dist/createNumberMask';
@@ -20,6 +21,9 @@ function App() {
         setCalc] = useState({'dollar': 0, 'dolarFree': 0, 'real': 0, 'realFree': 0});
     const moneyValue = useRef(null);
     const calcForm = useRef(null);
+    const [error,
+        setError] = useState('');
+
     // Funçoes de mascara do MaskedInput
     const moneyMask = createNumberMask({prefix: '', allowDecimal: true, decimalLimit: 2});
     const taxMask = createNumberMask({prefix: '', allowDecimal: true, decimalLimit: 2, intergerLimit: 3});
@@ -49,7 +53,17 @@ function App() {
         let state_tax = parseFloat(data.get('state_tax'));
         parseFloat(multiplier).toFixed(2);
 
-        if (dollars !== '' && state_tax !== '') {
+        // Condiçoes para mostrar um erro caso falte alguma informação
+        if (dollars && !state_tax) {
+            setError('Você deve inserir uma taxa de estado.');
+        } else if (!dollars && state_tax) {
+            setError('Você deve inserir o valor em dolar.');
+        } else if (!dollars && !state_tax) {
+            setError('Por favor, insira o valor em dolares e a taxa de estado!')
+        }
+
+        if (dollars && state_tax) {
+            setError('');
             let totalDollar = dollars;
             let totalDollarFee = dollars + (dollars * (state_tax / 100));
             let totalReal = dollars * parseFloat(multiplier);
@@ -61,7 +75,7 @@ function App() {
             } else {
                 totalRealFee = basicRealFee + (basicRealFee * (parseFloat(iof) / 100));
             }
-console.log(totalRealFee);
+
             setCalc({
                 'dollar': parseFloat(totalDollar).toFixed(2),
                 'dollarFee': parseFloat(totalDollarFee).toFixed(2),
@@ -69,6 +83,8 @@ console.log(totalRealFee);
                 'realFee': parseFloat(totalRealFee).toFixed(2)
             });
         }
+
+        console.log(state_tax);
 
     }
 
@@ -123,6 +139,11 @@ console.log(totalRealFee);
                                 className="false-input"/>
                         </div>
                     </div>
+                    <div className="error">
+                        <span>{error !== ''
+                                ? error
+                                : ''}</span>
+                    </div>
 
                     <div className="form-items">
                         <label>Modo de Pagamento</label>
@@ -143,8 +164,7 @@ console.log(totalRealFee);
                         </div>
                     </div>
 
-                    <button type="button" className="btn-convert" onClick={convert}>Converter</button>
-
+                        <button type="button" className="btn-convert" onClick={convert}>Converter</button>
                 </form>
 
                 <div className="mid-sect"></div>
@@ -157,7 +177,7 @@ console.log(totalRealFee);
                         </div>
                         <div className="result-control-info">
                             <span>{calc.real !== 0
-                                    ? calc.real
+                                    ? `R$ ${calc.real}`
                                     : '...'}</span>
                         </div>
                     </div>
@@ -167,8 +187,8 @@ console.log(totalRealFee);
                             <span>Total Real (com imposto)</span>
                         </div>
                         <div className="result-control-info">
-                            <span>{calc.realFee !== 0
-                                    ? calc.realFee
+                            <span>{calc.realFee
+                                    ? `R$ ${calc.realFee}`
                                     : '...'}</span>
                         </div>
                     </div>
@@ -179,7 +199,7 @@ console.log(totalRealFee);
                         </div>
                         <div className="result-control-info">
                             <span>{calc.dollar !== 0
-                                    ? calc.dollar
+                                    ? `$ ${calc.dollar}`
                                     : '...'}</span>
                         </div>
                     </div>
@@ -189,8 +209,8 @@ console.log(totalRealFee);
                             <span>Total Dólar (com imposto)</span>
                         </div>
                         <div className="result-control-info">
-                            <span>{calc.dollarFee !== 0
-                                    ? calc.dollarFee
+                            <span>{calc.dollarFee
+                                    ? `$ ${calc.dollarFee}`
                                     : '...'}</span>
                         </div>
                     </div>
@@ -201,7 +221,7 @@ console.log(totalRealFee);
                         </div>
                         <div className="result-control-info">
                             <span>{iof !== 0
-                                    ? iof
+                                    ? `% ${iof}`
                                     : '...'}</span>
                         </div>
                     </div>
@@ -212,7 +232,7 @@ console.log(totalRealFee);
                         </div>
                         <div className="result-control-info">
                             <span>{multiplier !== 0
-                                    ? parseFloat(multiplier).toFixed(2)
+                                    ? `R$ ${parseFloat(multiplier).toFixed(2)}`
                                     : '...'}</span>
                         </div>
                     </div>
