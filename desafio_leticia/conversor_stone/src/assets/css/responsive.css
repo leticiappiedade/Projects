@@ -1,4 +1,4 @@
-@media (max-width:1042px){
+@media only screen and (max-width:1042px){
 
     .app-section{
         width:90%;
@@ -7,7 +7,7 @@
   
   }
   
-  @media (max-width:860px){
+  @media only screen and (max-width:860px){
   
     .App{
       padding-top:80px;
@@ -34,7 +34,7 @@
     }
   }
   
-  @media (max-width:700px){
+  @media only screen and (max-width:600px){
     
     .form{
       width:95%!important;
@@ -55,3 +55,24 @@
     }
     
   }
+
+ @media only screen and (max-width:700px and min-width:601px){
+
+  .form{
+    width:75%!important;
+    padding-bottom:40px;
+  }
+
+  .form-items{
+    margin-left:20px!important;
+  }
+
+  .result-section{
+    width:75%!important;
+  }
+
+  .result-control{
+    margin-left:20px!important;
+    margin-right:20px!important;
+  }
+ }

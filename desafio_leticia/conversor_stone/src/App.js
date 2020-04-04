@@ -39,13 +39,15 @@ function App() {
         });
     }
 
-    // Aqui faz o calculo da conversao com os dados pegos da API e os dados de entrada
+    // Aqui faz o calculo da conversao com os dados pegos da API e os dados de
+    // entrada
     const convert = () => {
         fetchApi();
 
         const data = new FormData(calcForm.current);
         let dollars = parseFloat(unmask(data.get('dollars')));
         let state_tax = parseFloat(data.get('state_tax'));
+        parseFloat(multiplier).toFixed(2);
 
         if (dollars !== '' && state_tax !== '') {
             let totalDollar = dollars;
@@ -59,7 +61,7 @@ function App() {
             } else {
                 totalRealFee = basicRealFee + (basicRealFee * (parseFloat(iof) / 100));
             }
-
+console.log(totalRealFee);
             setCalc({
                 'dollar': parseFloat(totalDollar).toFixed(2),
                 'dollarFee': parseFloat(totalDollarFee).toFixed(2),
@@ -112,8 +114,13 @@ function App() {
                     <div className="form-items">
                         <label htmlFor="stateTax">Imposto de Estado</label>
                         <div className="input-form">
-                          <div className="input-extra" id="tax-extra">%</div>
-                          <MaskedInput mask={taxMask} id="state_tax" name="state_tax" type="text" className="false-input"/>
+                            <div className="input-extra" id="tax-extra">%</div>
+                            <MaskedInput
+                                mask={taxMask}
+                                id="state_tax"
+                                name="state_tax"
+                                type="text"
+                                className="false-input"/>
                         </div>
                     </div>
 
@@ -205,7 +212,7 @@ function App() {
                         </div>
                         <div className="result-control-info">
                             <span>{multiplier !== 0
-                                    ? multiplier
+                                    ? parseFloat(multiplier).toFixed(2)
                                     : '...'}</span>
                         </div>
                     </div>
