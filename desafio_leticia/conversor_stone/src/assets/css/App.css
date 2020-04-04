@@ -5,7 +5,7 @@
 
   width:100vw;
   height:100%;
-  background-color:#2C2F33 ;
+  background-color:rgb(34, 34, 34) ;
   display:flex;
   justify-content: center;
   align-items: center;
@@ -26,8 +26,8 @@
   width:40%;
   padding-top:40px;
   border-radius:5px;
-  border-right:4px solid rgba(247, 202, 24, 1);
-  background-color:#F5f5f5;
+  border-right:4px solid rgb(20, 170, 75);
+  background-color:white;
 
 }
 
@@ -98,8 +98,8 @@
   pointer-events: stroke;
   border-radius:5px;
   border:0;
-  background-color:rgba(247, 202, 24, 1);
-  color:RGBA(0, 0, 0, .65);
+  background-color:rgb(20, 170, 75);
+  color:rgb(255, 255, 255);
 
   font-size:.85em;
 
@@ -130,10 +130,10 @@
   width:53%;
   padding-top:40px;
   padding-bottom:40px;
-  background-color:#F5f5f5;
+  background-color:white;
  
   justify-self:flex-end;
-  border-left:4px solid rgba(247, 202, 24, 1);
+  border-left:4px solid rgb(20, 170, 75);
   border-radius:5px;
 
   font-family:'Roboto', sans-serif;
@@ -150,7 +150,7 @@
   font-size:1.1em;
   
   margin-bottom:10px;
-  border-bottom:solid 2px rgba(247, 202, 24, 1);
+  border-bottom:solid 2px rgb(20, 170, 75, .2);
 
 }
 
